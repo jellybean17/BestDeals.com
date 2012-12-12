@@ -1,0 +1,19 @@
+<h1>Deals#new</h1>
+<p>Find me in app/views/deals/new.html.erb</p>
+
+<%= form_for @deal do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %></br>
+  <%= f.label :description %>
+  <%= f.text_area :description, :size => "30x10" %></br>
+  <%= f.label :units_available %>
+  <%= f.text_field :units_available %></br>
+  <%= f.label :expiry_date %>
+  <%= f.datetime_select :expiry_date %></br>
+  <%= f.label :price %>
+  <%= f.text_field :price %></br>
+  <%= f.label :discount %>
+  <%= f.text_field :discount %></br>
+  <%= f.submit "Create Deal" %>
+<% end %>
+

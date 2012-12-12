@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  units_available: 1
+  expiry_date: 2012-12-12 09:46:25
+  price: 9.99
+  discount: 1
+  DealOwner: 
+
+two:
+  title: MyString
+  description: MyText
+  units_available: 1
+  expiry_date: 2012-12-12 09:46:25
+  price: 9.99
+  discount: 1
+  DealOwner: 

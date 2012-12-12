@@ -1,4 +1,21 @@
 BestDeals::Application.routes.draw do
+  get "deals/index"
+
+  get "deals/show"
+
+  get "deals/new"
+
+  get "deals/create"
+
+  get "deals/edit"
+
+  get "deals/update"
+
+  get "deals/destroy"
+
+  devise_for :deal_owners
+
+  resources :deals
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +65,7 @@ BestDeals::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'deals#index'
 
   # See how all your routes lay out with "rake routes"
 
