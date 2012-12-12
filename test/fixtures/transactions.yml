@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date_time: 2012-12-12 15:34:20
+  creditcard_number: 1
+  amount: 9.99
+  deal: 
+  consumer: 
+
+two:
+  date_time: 2012-12-12 15:34:20
+  creditcard_number: 1
+  amount: 9.99
+  deal: 
+  consumer: 

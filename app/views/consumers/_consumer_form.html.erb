@@ -1,0 +1,10 @@
+<%= form_for(:consumer, :url => consumers_path(@consumer) ) do |f| %>
+  <%= f.label :name %>  
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+  <%= f.submit "submit" %>
+
+<% end %>

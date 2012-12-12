@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121212040125) do
+ActiveRecord::Schema.define(:version => 20121212094920) do
+
+  create_table "consumers", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "phone_number"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "deal_owners", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -44,5 +52,18 @@ ActiveRecord::Schema.define(:version => 20121212040125) do
   end
 
   add_index "deals", ["DealOwner_id"], :name => "index_deals_on_DealOwner_id"
+
+  create_table "transactions", :force => true do |t|
+    t.datetime "date_time"
+    t.integer  "creditcard_number"
+    t.decimal  "amount"
+    t.integer  "deal_id"
+    t.integer  "consumer_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "transactions", ["consumer_id"], :name => "index_transactions_on_consumer_id"
+  add_index "transactions", ["deal_id"], :name => "index_transactions_on_deal_id"
 
 end

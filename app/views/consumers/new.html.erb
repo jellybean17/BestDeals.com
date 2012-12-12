@@ -1,0 +1,14 @@
+<h1>Consumers#new</h1>
+<p>Find me in app/views/consumers/new.html.erb</p>
+<%= form_for @consumer do |f| %>
+  <%= f.label :name %>  
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+  <%= f.submit "submit" %>
+
+<% end %>
+
+<%= link_to "Pay", new_transaction_path %>

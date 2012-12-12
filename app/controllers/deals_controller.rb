@@ -8,7 +8,6 @@ class DealsController < ApplicationController
 
   def show
     @deal = Deal.find(params[:id])
-
   end
 
   def new
@@ -18,8 +17,11 @@ class DealsController < ApplicationController
   def create
     @deal = Deal.new(params[:deal])
     @deal.DealOwner_id = current_deal_owner.id
-    @deal.save!
-    redirect_to deals_path
+    if @deal.save
+      redirect_to deals_path
+    else
+      render "new"
+    end
   end
 
   def edit
@@ -34,5 +36,9 @@ class DealsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def apply
+    @deal = Deal.find(params[:id])
   end
 end
