@@ -1,20 +1,27 @@
 %h3
   Title:
-  =@deal.title
+  = @deal.title
   %br
   Description:
-  =@deal.description
+  = @deal.description
   %br
   Units available:
-  =@deal.units_available
+  = @deal.units_available
   %br
   Expiry Date:
-  =@deal.expiry_date
+  = @deal.expiry_date
   %br
-  Price:
-  =@deal.price
+  Price: Rs. 
+  = @deal.price
   %br
   Discount:
-  =@deal.discount
-  
+  = @deal.discount
+  \%
+= link_to 'Apply', new_consumer_path
 
+/ = form_for(:consumers, :url => consumers_create_path(@consumers)) do |f|
+/   = f.label :name
+/   = f.text_field :name
+/   = f.submit "add"
+
+= render "consumers/consumer_form"

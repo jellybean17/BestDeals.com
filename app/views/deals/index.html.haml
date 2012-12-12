@@ -14,9 +14,9 @@
     %td
       = deal.title
     %td
+      = link_to 'Read', deal_path(deal.id)
+    %td
       - if @deal_owner && deal.DealOwner_id == @deal_owner.id
         = link_to 'Edit', edit_deal_path(deal.id)
-        |
-        = link_to 'Read', deal_path(deal.id)
     %br
 = link_to 'Add new Deal', new_deal_path
