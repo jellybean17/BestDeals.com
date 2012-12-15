@@ -1,4 +1,5 @@
 BestDeals::Application.routes.draw do
+
   get "customers/show"
 
   get "customers/new"
