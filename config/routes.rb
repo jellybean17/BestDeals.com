@@ -1,4 +1,10 @@
 BestDeals::Application.routes.draw do
+  get "customers/show"
+
+  get "customers/new"
+
+  get "customers/create"
+
   get "transactions/new"
 
   get "transactions/create"
