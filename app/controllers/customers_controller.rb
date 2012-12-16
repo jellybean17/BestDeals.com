@@ -8,7 +8,9 @@ class CustomersController < ApplicationController
 
   def create
     @deal = Deal.find(params[:deal_id])
-    @customer = @deal.customers.create!(params[:customer])
+    @customer = @deal.customers.build(params[:customer])
+    @customer.amount = @deal.price
+    @customer.save!
     redirect_to deal_path(@deal)
   end
 end
