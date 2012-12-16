@@ -1,0 +1,13 @@
+<%= form_for([@deal, @deal.customers.build]) do |f| %>
+  <%= f.label :name %>  
+  <%= f.text_field :name %>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label :credit_card_number %>
+  <%= f.text_field :credit_card_number %>
+
+  <%= f.submit "submit" %>
+
+<% end %>

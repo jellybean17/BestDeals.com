@@ -1,43 +1,13 @@
 BestDeals::Application.routes.draw do
 
-  get "customers/show"
-
-  get "customers/new"
-
-  get "customers/create"
-
-  get "transactions/new"
-
-  get "transactions/create"
-
-  get "transactions/show"
-
-  get "consumers/new"
-
-  get "consumers/create"
-
-  get "deals/apply"
-
-  get "deals/index"
-
-  get "deals/show"
-
-  get "deals/new"
-
-  get "deals/create"
-
-  get "deals/edit"
-
-  get "deals/update"
-
-  get "deals/destroy"
-
  
 match 'consumers' => 'consumers#create', :as => 'consumers', :via => :post
 
   devise_for :deal_owners
 
-  resources :deals
+  resources :deals do
+    resources :customers
+  end
 
   resources :transactions
 

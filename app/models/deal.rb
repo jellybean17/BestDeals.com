@@ -4,7 +4,6 @@ class Deal < ActiveRecord::Base
   validates_presence_of :title, :description, :expiry_date, :price, :discount, :units_available
   has_many :transactions
   has_many :consumers, :through => :transactions
-  accepts_nested_attributes_for :consumers
 
   belongs_to :DealOwner
   has_many :customers
