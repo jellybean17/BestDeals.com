@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>BestDeals</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <% if deal_owner_signed_in? %>
-    <%= link_to "log out", destroy_deal_owner_session_url, :method => :delete %>
-  <% else %>
-    <%= link_to "sign in", new_deal_owner_session_url %> or 
-    <%= link_to " sign up", new_deal_owner_registration_url %>
-  <% end %>
-<%= yield %>
-
-</body>
+  <head>
+    <title>BestDeals</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    </head>
+  <body>
+    <header id="title_bar">
+      <section id="title">BestDeals.com</section>
+      <span>    
+        <% if deal_owner_signed_in? %>
+          <%= link_to "log out", destroy_deal_owner_session_url, :method => :delete %>
+        <% else %>
+          <%= link_to "sign in", new_deal_owner_session_url %> or 
+          <%= link_to " sign up", new_deal_owner_registration_url %>
+        <% end %>
+      </span>
+    </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>Hot Deals</li>
+        <li>About Us</li>
+      </ul>
+    </nav>
+    <div id="main_container">
+      <%= yield %>
+    </div>
+  </body>
 </html>

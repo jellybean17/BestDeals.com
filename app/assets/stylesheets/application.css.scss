@@ -1,0 +1,57 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+@font-face{
+  font-family: Finger_paint;
+  /*src: url('/fonts/FingerPaint-Regular.ttf');*/
+  src: url('fonts/Inder/Inder-Regular.ttf');
+}
+
+$main_color: #eee;
+
+body{
+  background-color: $main_color;
+  width: 100%;
+  min-width: 800px;
+  font-family: Finger_paint;
+}
+
+header#title_bar{
+  background-color: #ddd;
+  color: black;
+  height: 100px;
+  margin-left: -8px;
+  margin-top: -8px;
+  margin-right: 8px;
+  padding: 5px;
+  span {
+    float: right;
+  }
+}
+
+nav{
+  height: 20px;
+  background-color: #ccc;
+}
+
+div#main_container{
+  width: 90%;
+  min-width: 700px;
+  min-height: 600px;
+  background-color: #79ac45;
+  padding: 10px;
+}
+
+
+
