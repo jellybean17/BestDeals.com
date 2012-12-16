@@ -8,6 +8,7 @@ class DealsController < ApplicationController
 
   def show
     @deal = Deal.find(params[:id])
+    @customers = @deal.customers.all
   end
 
   def new

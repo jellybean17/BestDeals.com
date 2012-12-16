@@ -15,10 +15,23 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
+
+group :development, :test do
+  gem 'rspec-rails', '~>2.0'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+end
+
+group :development do
+  gem "better_errors"
+end
+
+gem 'binding_of_caller'
+
 
 gem 'devise'
 

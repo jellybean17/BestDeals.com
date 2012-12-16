@@ -17,6 +17,15 @@
   Discount:
   = @deal.discount
   \%
+
+%h4
+  Customers
+%ul
+  - @customers.each do |c|
+    %li
+      = c.name
+      %br
+
 = link_to 'Apply', new_consumer_path
 
 / = form_for(:consumers, :url => consumers_create_path(@consumers)) do |f|
@@ -24,4 +33,4 @@
 /   = f.text_field :name
 /   = f.submit "add"
 
-= render "consumers/consumer_form"
+= render "customers/customer_form"
