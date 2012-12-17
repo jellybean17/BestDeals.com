@@ -3,8 +3,7 @@ class UserMailer < ActionMailer::Base
   def welcome_email(customer)
     @customer = customer
     mail( :to       => customer.email_id,
-          :subject  => "Registered",
-         
+          :subject  => "Registered"
       )
   end
 end
