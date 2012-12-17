@@ -1,15 +1,9 @@
--@deal.customers.build.errors.full_messages.each do |e| 
-  *
-  = e  
-  %br
-%br
-%br
-%h3
-  Title:
-  = @deal.title
-  %br
-  Description:
-  = @deal.description
+
+#main_container
+  %h2
+    = @deal.title
+  %p
+    = @deal.description
   %br
   Units available:
   = @deal.units_available
@@ -32,7 +26,7 @@
       = c.name
       %br
 
-= link_to 'Apply', new_consumer_path
+/ = link_to 'Apply', new_customer_path
 
 / = form_for(:consumers, :url => consumers_create_path(@consumers)) do |f|
 /   = f.label :name

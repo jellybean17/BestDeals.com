@@ -9,9 +9,6 @@ match 'consumers' => 'consumers#create', :as => 'consumers', :via => :post
     resources :customers
   end
 
-  resources :transactions
-
-  resources :consumers
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

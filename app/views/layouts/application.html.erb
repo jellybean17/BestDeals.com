@@ -7,7 +7,7 @@
     </head>
   <body>
     <header id="title_bar">
-      <section id="title">BestDeals.com</section>
+      <section id="title"><h1>BestDeals.com</h1></section>
       <span>    
         <% if deal_owner_signed_in? %>
           <%= link_to "log out", destroy_deal_owner_session_url, :method => :delete %>
@@ -17,16 +17,16 @@
         <% end %>
       </span>
     </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <nav>
       <ul>
-        <li>Home</li>
-        <li>Hot Deals</li>
-        <li>About Us</li>
+        <li><a href="<%= deals_path %>">Home</a></li>
+        <li><a href="#">Hot Deals</a></li>
+        <li><a href="#">About Us</a></li>
       </ul>
     </nav>
     <div id="main_container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
   </body>

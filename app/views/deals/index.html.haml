@@ -1,22 +1,11 @@
-%h1 Deals#index
-%p 
-  Find me in app/views/deals/index.html.erb
 %table
-  %tr
-    %th
-      Id
-    %th
-      title
-- @deals.each do |deal|
-  %tr
-    %td
-      = deal.id
-    %td
-      = deal.title
-    %td
-      = link_to 'Read', deal_path(deal.id)
-    %td
-      - if @deal_owner && deal.DealOwner_id == @deal_owner.id
-        = link_to 'Edit', edit_deal_path(deal.id)
-    %br
+  - @deals.each do |deal|
+    %tr
+      %td.deal
+        = deal.title
+      %td.action
+        = link_to 'Read', deal_path(deal.id)
+      %td.action
+        - if @deal_owner && deal.DealOwner_id == @deal_owner.id
+          = link_to 'Edit', edit_deal_path(deal.id)
 = link_to 'Add new Deal', new_deal_path
