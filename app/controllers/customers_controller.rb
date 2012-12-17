@@ -10,7 +10,15 @@ class CustomersController < ApplicationController
     @deal = Deal.find(params[:deal_id])
     @customer = @deal.customers.build(params[:customer])
     @customer.amount = @deal.price
-    @customer.save!
-    redirect_to deal_path(@deal)
+     respond_to do |format|
+      if @customer.save!
+        UserMailer.welcome_email(@customer).deliver!
+        format.html { redirect_to(deal_path(@deal), :notice => 'DEAL was successfully created.') }
+        format.json { render :json => @deal, :status => :created, :location => @deal }
+      else
+        format.html { render :action => @deal }
+        format.json { render :json => @deal.errors, :status => :unprocessable_entity }
+      end
+    end
   end
 end

@@ -26,11 +26,5 @@
       = c.name
       %br
 
-= link_to 'Apply', new_consumer_path
-
-/ = form_for(:consumers, :url => consumers_create_path(@consumers)) do |f|
-/   = f.label :name
-/   = f.text_field :name
-/   = f.submit "add"
 
 = render "customers/customer_form"
